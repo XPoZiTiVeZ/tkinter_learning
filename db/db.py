@@ -8,13 +8,12 @@ engine = create_engine("sqlite:///db.db", echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-
 Base = declarative_base()
 
 class User(Base):
     __tablename__ = "User"
     
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     login = Column(String(16))
     password = Column(String(64))
     role = Column(String(32))
