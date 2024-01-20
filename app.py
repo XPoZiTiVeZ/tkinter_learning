@@ -39,12 +39,13 @@ def knock_knock(event):
             print("Обычный пользователь")
     else:
         ent_password.delete(0,"end")
-        ent_password.config(bg="44000066")
+        ent_password.config(bg="#EE0000")
+        ent_password.focus_set()
 
 
 btn_login.bind("<Button-1>",knock_knock)
 btn_exit.bind("<Button-1>", lambda _: window.destroy())
+ent_password.bind("<FocusIn>", lambda _: ent_password.config(bg="white"))
 
 
-
-window.mainloop()
+window.mainloop() 
